@@ -1,21 +1,24 @@
-const { request, mock } = require('pactum');
-
+import { pactum, request, mock } from 'pactum';
 
 function setRequestDefaults() {
+    console.log('Starting 1...')
     request.setBaseUrl('http://localhost:3000');
     request.setDefaultTimeout(10000);
 }
 
-before(async () => {
-    console.log('hello');
+function setupMockServer() {
     mock.start();
+    console.log('Starting...')
     mock.useRemoteServer("http://localhost:9393");
-    setRequestDefaults();
+}
 
+before(async () => {
+    setupMockServer();
+    setRequestDefaults();
 })
 
 after(async () => {
-    console.log('bye');
+    mock.stop();
 })
 
 mock.addInteraction({
@@ -24,11 +27,7 @@ mock.addInteraction({
         path: '/status/418'
     },
     response: {
-        status: 418,
-        body: {
-            zipcode: 90210,
-            city: 'Beverly Hills'
-        }
+        status: 418
     }
 });
 

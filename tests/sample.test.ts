@@ -1,4 +1,4 @@
-const { spec } = require('pactum');
+import { pactum, request, mock, spec } from 'pactum';
 
 describe('HTTP Bin', () => {
 
@@ -10,7 +10,7 @@ describe('HTTP Bin', () => {
 
     it('should be a teapot 2', async () => {
       await spec()
-        .get('http://0.0.0.0:9393/status/418')
+        .get('http://localhost:9393/status/418')
         .expectStatus(418);
     });
   
