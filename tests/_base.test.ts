@@ -1,24 +1,37 @@
-import { pactum, request, mock } from 'pactum';
+import dotenv from 'dotenv';
+import { request, mock, settings } from 'pactum';
+
+// Configuring dotenv
+dotenv.config();
 
 function setRequestDefaults() {
-    console.log('Starting 1...')
-    request.setBaseUrl('http://localhost:3000');
-    request.setDefaultTimeout(10000);
+    request.setBaseUrl(process.env.BASE_URL);
+    request.setDefaultTimeout(Number(process.env.DEFAULT_TIMEOUT));
 }
 
 function setupMockServer() {
     mock.start();
-    console.log('Starting...')
     mock.useRemoteServer("http://localhost:9393");
 }
 
 before(async () => {
+
+    console.log('Started Executing API Test Automation : ', process.env.APPLICATION_NAME);
+    console.log('\n');
+
+    settings.setLogLevel("ERROR");
+
     setupMockServer();
     setRequestDefaults();
 })
 
 after(async () => {
+
     mock.stop();
+
+    console.log('\n');
+    console.log('Stopped Executing API Test Automation : ', process.env.APPLICATION_NAME);
+
 })
 
 mock.addInteraction({
