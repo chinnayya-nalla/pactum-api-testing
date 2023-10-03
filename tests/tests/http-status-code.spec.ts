@@ -4,7 +4,7 @@ import { spec, request } from 'pactum';
 describe('Http Response Status Test', () => {
 
   before(async () => {
-    request.setBaseUrl('https://httpbin.org/');
+    request.setBaseUrl('https://httpbin.org');
   })
 
   it('Should Respond 200', async() => {
