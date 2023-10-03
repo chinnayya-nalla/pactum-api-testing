@@ -11,7 +11,7 @@ function setRequestDefaults() {
 
 function setupMockServer() {
     mock.start();
-    mock.useRemoteServer("http://localhost:9393");
+    mock.useRemoteServer("https://mock-server.com");
 }
 
 before(async () => {
