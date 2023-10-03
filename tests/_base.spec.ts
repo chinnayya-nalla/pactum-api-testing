@@ -19,7 +19,7 @@ before(async () => {
     console.log('Started Executing API Test Automation : ', process.env.APPLICATION_NAME);
     console.log('\n');
 
-    settings.setLogLevel("ERROR");
+    settings.setLogLevel('ERROR');
 
     setupMockServer();
     setRequestDefaults();
@@ -33,14 +33,4 @@ after(async () => {
     console.log('Stopped Executing API Test Automation : ', process.env.APPLICATION_NAME);
 
 })
-
-mock.addInteraction({
-    request: {
-        method: 'GET',
-        path: '/status/418'
-    },
-    response: {
-        status: 418
-    }
-});
 
