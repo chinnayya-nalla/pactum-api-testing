@@ -19,5 +19,11 @@ describe('HTTP Bin', () => {
         .get('/status/418')
         .expectStatus(200);
     });
+
+    it('should be a teapot 3 - Mock', async () => {
+      await spec()
+        .get('http://localhost:9393/status/mock')
+        .expectStatus(200);
+    });
   
 });

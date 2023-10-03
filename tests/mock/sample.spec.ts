@@ -3,9 +3,9 @@ import { mock } from 'pactum';
 mock.addInteraction({
     request: {
         method: 'GET',
-        path: '/status/418'
+        path: '/status/mock'
     },
     response: {
-        status: 418
+        status: 200
     }
 });
