@@ -1,4 +1,4 @@
-import { pactum, request, mock, spec } from 'pactum';
+import { spec } from 'pactum';
 
 describe('HTTP Bin', () => {
 
