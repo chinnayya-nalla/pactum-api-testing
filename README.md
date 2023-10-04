@@ -3,7 +3,9 @@ This is a Basic Project Structure to help developers to start building own Pactu
 
 
 ## Features
-- Moca Tests
+- Mocha Tests
+- Data Maps
+- Data Templates
 - Environment Variables
 - Exclusive & Inclusive Tests
 
