@@ -11,5 +11,5 @@ describe('Pactum Mocking Test', () => {
   it('Should Get Mock Data', async() => {
     await spec().get('/api/mock/data').expectStatus(200).expectJsonMatch('name', like('mock-server'));
   });
-  
+
 });
