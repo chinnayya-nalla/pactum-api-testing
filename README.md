@@ -1,5 +1,5 @@
 # Pactum Automation Testing
-This is a Basic Project Structure to help developers to start building own Pactum API Testing TypeScript, Mocha and Pactum with a good structure practices based on clean Architecture
+This is a Basic Project Structure to help developers to start building own Pactum API Testing using TypeScript, Mocha and Pactum with a good structure practices based on clean Architecture
 
 
 ## Features
