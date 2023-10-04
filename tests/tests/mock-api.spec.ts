@@ -5,7 +5,7 @@ import { like } from 'pactum-matchers';
 describe('Pactum Mocking Test', () => {
 
   before(async () => {
-    request.setBaseUrl('https://mock-server.com');
+    request.setBaseUrl('http://localhost:9393');
   })
 
   it('Should Get Mock Data', async() => {

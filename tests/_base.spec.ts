@@ -11,7 +11,7 @@ function setRequestDefaults() {
 
 function setupMockServer() {
     mock.start();
-    mock.useRemoteServer("https://mock-server.com");
+    mock.useRemoteServer("http://localhost:9393");
 }
 
 before(async () => {
@@ -33,4 +33,3 @@ after(async () => {
     console.log('Stopped Executing API Test Automation : ', process.env.APPLICATION_NAME);
 
 })
-
